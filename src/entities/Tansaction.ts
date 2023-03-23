@@ -6,6 +6,7 @@ import {
 	ManyToOne,
 	JoinColumn,
 	Relation,
+	DeepPartial,
 } from 'typeorm';
 import Client from './Client.js';
 
@@ -34,5 +35,5 @@ export default class Transaction extends BaseEntity {
 	@JoinColumn({
 		name: 'client_id',
 	})
-	client: Relation<Client>;
+	client: Client | null;
 }
